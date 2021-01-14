@@ -1,6 +1,6 @@
 {
   "name": "jest-github-action",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Jest action adding checks to your pull requests",
   "main": "lib/run.js",
   "scripts": {
@@ -52,7 +52,7 @@
     "strip-ansi": "^6.0.0"
   },
   "devDependencies": {
-    "@octokit/types": "^2.11.1",
+    "@octokit/types": "^6.2.1",
     "@types/jest": "^25.2.1",
     "@types/lodash": "^4.14.150",
     "@types/markdown-table": "^2.0.0",

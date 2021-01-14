@@ -18,7 +18,7 @@ Main features:
 You can now consume the action by referencing the v1 branch
 
 ```yaml
-uses: mattallty/jest-github-action@v1
+uses: ibitworks/jest-github-action@1.1.0
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
@@ -29,7 +29,7 @@ By default, this action will execute `npm test` to run your tests.
 You can change this behavior by providing a custom `test-command` like this:
 
 ```yaml
-uses: mattallty/jest-github-action@v1
+uses: ibitworks/jest-github-action@1.1.0
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 with:
@@ -40,7 +40,7 @@ with:
 ### Running tests only on changed files
 
 ```yaml
-uses: mattallty/jest-github-action@v1
+uses: ibitworks/jest-github-action@1.1.0
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 with:
@@ -52,7 +52,7 @@ with:
 ### Silencing the code coverage comment
 
 ```yaml
-uses: mattallty/jest-github-action@v1
+uses: ibitworks/jest-github-action@1.1.0
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 with:
@@ -65,12 +65,24 @@ with:
 For running tests in folders other than root, supply a working-directory.
 
 ```yaml
-uses: mattallty/jest-github-action@v1
+uses: ibitworks/jest-github-action1.1.0
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 with:
   working-directory: "frontend"
 ```
 
+### Running coverage percent check
 
-See the [actions tab](https://github.com/mattallty/jest-github-action/actions) for runs of this action! :rocket:
+Check will fail if coverage is less than specified
+
+```yaml
+uses: ibitworks/jest-github-action@1.1.0
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+with:
+  min-coverage: "80"
+```
+
+Forked from mattallty/jest-github-action
+

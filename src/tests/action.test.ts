@@ -18,7 +18,7 @@ describe("getCoverageTable()", () => {
 })
 
 describe("asMarkdownCode()", () => {
-  it("should return a markdown formated code", () => {
+  it("should return a markdown formatted code", () => {
     expect(asMarkdownCode("hello")).toStrictEqual("```\nhello\n```")
   })
 })

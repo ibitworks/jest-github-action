@@ -1,4 +1,4 @@
-name: "Jest Annotations & Coverage"
+name: "Jest coverage checker"
 description: "Jest action adding checks and annotations to your pull requests and comment them with code coverage results."
 branding:
   icon: "check"
@@ -20,6 +20,10 @@ inputs:
     description: "Only run tests on changed files (over base branch)"
     required: false
     default: "false"
+  min-coverage:
+    description: "Minimum statements coverage coverage for PR (percent)."
+    required: false
+    default: "0"
 
 runs:
   using: "node12"
