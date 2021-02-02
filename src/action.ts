@@ -40,7 +40,7 @@ export async function run() {
     const results = parseResults(RESULTS_FILE)
 
     const covMap = createCoverageMap((results.coverageMap as unknown) as CoverageMapData)
-    const statementsCov = covMap.getCoverageSummary().statements.pct;
+    const statementsCov = Math.trunc(covMap.getCoverageSummary().statements.pct);
 
     core.info("All statements coverage: " + statementsCov + "%")
 
@@ -48,7 +48,7 @@ export async function run() {
     const isPR = !!getPullId()
 
     const isCovOk = statementsCov >= minCov
-    let covErrString = isCovOk ? "" : `Statements coverage less then minimum! (minimum: ${minCov}%; actual: ${statementsCov}% )`
+    let covErrString = isCovOk ? "" : `Test coverage fall behind ${minCov}% threshold (actual - ${statementsCov}%).`
     const comment = getComment(covMap, statementsCov, covErrString, CWD)
     const checkPayload = getCheckPayload(results, CWD, isCovOk, covErrString, comment)
     await octokit.checks.create(checkPayload)
